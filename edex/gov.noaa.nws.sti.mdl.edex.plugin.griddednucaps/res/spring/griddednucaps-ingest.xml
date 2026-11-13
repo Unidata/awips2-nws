@@ -23,13 +23,4 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <constructor-arg value="griddednucaps" />
         <constructor-arg value="jms-durable:queue:Ingest.Griddednucaps" />
     </bean>
-    
-    <bean id="griddednucaps-camel-clustered" factory-bean="routeContextFactory" factory-method="createClustered">
-        <constructor-arg>
-            <bean class="gov.noaa.nws.sti.mdl.edex.plugin.griddednucaps.GriddednucapsCamelClusteredRoutes">
-                <constructor-arg name="aggregationStrategy" ref="timeBasedAggStrategy" />
-                <constructor-arg name="aggregateProcessorId" value="griddednucapsAggProcessor" />
-            </bean>
-        </constructor-arg>
-    </bean>
 </beans>
